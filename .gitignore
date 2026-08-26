@@ -1,0 +1,16 @@
+.next/
+.next-build/
+out/
+dist/
+node_modules/
+.env*
+*.log
+.vinext/
+.wrangler/
+_unused-assets/
+.claude/
+.agents/
+AGENTS.md
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,36 @@
+{
+  "name": "portfolio-i-grilli",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "vinext build",
+    "build:netlify": "next build",
+    "postbuild": "node scripts/prepare-hosting.mjs",
+    "start": "vinext start",
+    "check": "vinext check",
+    "dev:vinext": "next dev -p 3001",
+    "build:vinext": "vinext build",
+    "start:vinext": "wrangler dev --config dist/server/wrangler.json",
+    "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
+  },
+  "dependencies": {
+    "@vinext/cloudflare": "^1.0.0-beta.3",
+    "next": "15.5.7",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.47.0",
+    "@vitejs/plugin-react": "^6.0.4",
+    "@vitejs/plugin-rsc": "^0.5.30",
+    "react-server-dom-webpack": "19.2.6",
+    "vinext": "1.0.0-beta.3",
+    "vite": "^8.1.5",
+    "wrangler": "^4.114.0"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.1.5"
+  }
+}
