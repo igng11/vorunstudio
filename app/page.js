@@ -636,7 +636,7 @@ export default function Home() {
             <article className="profile-card reveal" key={title}>
               <div className="profile-number">({String(index + 1).padStart(2, "0")})</div>
               <div className="profile-icons">
-                <span className="tech-icon"><b style={{ "--icon-color": "#F04A32" }}>{String(index + 1).padStart(2, "0")}</b></span>
+                <span className="tech-icon"><b style={{ "--icon-color": "var(--accent)" }}>{String(index + 1).padStart(2, "0")}</b></span>
               </div>
               <div className="profile-content">
                 <span>{t.process.index}</span>
