@@ -583,7 +583,8 @@ export default function Home() {
                   alt={`${project.type} — ${t.work.projects[projectIndex].replace("\n", " ")}`}
                   width={project.art.width}
                   height={project.art.height}
-                  loading="lazy"
+                  loading={projectIndex === 0 ? "eager" : "lazy"}
+                  fetchPriority={projectIndex === 0 ? "low" : "auto"}
                   decoding="async"
                 />
               </a>
