@@ -148,37 +148,18 @@ export default function HeroGradientMark({ label }) {
   }, []);
 
   return (
-    <svg
+    <div
       className="hero-gradient-mark"
-      viewBox="0 0 512 512"
       role="img"
       aria-label={label}
     >
-      <defs>
-        <clipPath id="vorun-hero-diagonal-clip" clipPathUnits="userSpaceOnUse">
-          <rect
-            width="64"
-            height="94"
-            transform="translate(56 93) scale(1.78125)"
-          />
-          <polygon
-            points="224 27 224 0 158.71 0 0 158.71 0 183 68 183 224 27"
-            transform="translate(56 93) scale(1.78125)"
-          />
-        </clipPath>
-      </defs>
-      <g transform="translate(56 93) scale(1.78125)">
-        <rect className="hero-mark-static" width="64" height="94" />
-        <polygon
-          className="hero-mark-fallback"
-          points="224 27 224 0 158.71 0 0 158.71 0 183 68 183 224 27"
-        />
-      </g>
-      <g clipPath="url(#vorun-hero-diagonal-clip)">
-        <foreignObject x="0" y="0" width="512" height="512">
-          <canvas ref={canvasRef} className="hero-gradient-canvas" aria-hidden="true" />
-        </foreignObject>
-      </g>
-    </svg>
+      <svg className="hero-mark-fallback" viewBox="0 0 512 512" aria-hidden="true">
+        <g transform="translate(56 93) scale(1.78125)">
+          <rect width="64" height="94" />
+          <polygon points="224 27 224 0 158.71 0 0 158.71 0 183 68 183 224 27" />
+        </g>
+      </svg>
+      <canvas ref={canvasRef} className="hero-gradient-canvas" aria-hidden="true" />
+    </div>
   );
 }

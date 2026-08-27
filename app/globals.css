@@ -134,12 +134,12 @@ body[data-theme="light"] .hero-intro h1 { color: var(--black); }
 
 .hero { height: 100svh; position: relative; overflow: hidden; background: var(--background); color: var(--foreground); padding-top: 56px; margin-left: calc(var(--content-gap) * -1); width: calc(100% + var(--content-gap)); transition: margin-left .28s ease, width .28s ease; }
 .hero::before, .hero::after { content: none; }
-.portrait-wrap { position: absolute; z-index: 2; width: min(40vw, 62svh, 560px); height: auto; aspect-ratio: 224 / 220; left: clamp(36px, 5vw, 80px); bottom: calc(var(--hero-image-bottom) - 5px); transform: none; overflow: visible; }
+.portrait-wrap { position: absolute; z-index: 7; width: min(40vw, 62svh, 560px); height: auto; aspect-ratio: 224 / 220; left: clamp(36px, 5vw, 80px); bottom: calc(var(--hero-image-bottom) - 100px); transform: none; overflow: visible; }
 .portrait-wrap picture, .project-art-image picture { display: contents; }
 .portrait-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; pointer-events: none; }
 .hero-gradient-mark { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; color: var(--white); pointer-events: none; }
-.hero-mark-static, .hero-mark-fallback { fill: currentColor; }
-.hero-gradient-canvas { display: block; width: 100%; height: 100%; }
+.hero-mark-fallback { position: absolute; inset: 0; width: 100%; height: 100%; display: block; fill: currentColor; }
+.hero-gradient-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; -webkit-mask: url("/hero-mark-mask.svg") center / 100% 100% no-repeat; mask: url("/hero-mark-mask.svg") center / 100% 100% no-repeat; }
 body[data-theme="light"] .hero-gradient-mark { color: var(--black); }
 .portrait-dark { z-index: 1; opacity: 1; }
 .portrait-light { z-index: 2; opacity: 0; }
@@ -171,7 +171,7 @@ body[data-theme="light"] .service-orbit-star path { fill: var(--black); }
 .theme-toggle:hover, .language-toggle:hover, .cv-download:hover, .copy-email-button:hover, .hero-contact-button:hover { opacity: .72; }
 .cv-download:disabled { cursor: default; }
 .hero-intro { position: absolute; z-index: 5; top: 78px; left: 0; right: 0; bottom: auto; padding: 24px 110px 26px 28px; display: grid; grid-template-columns: .9fr 1.35fr; align-items: center; gap: clamp(20px, 3vw, 48px); background: rgba(0,0,0,.48); backdrop-filter: blur(8px); }
-.hero-name { min-width: 0; margin-left: clamp(60px, 6.5vw, 100px); text-align: left; }
+.hero-name { min-width: 0; margin-left: clamp(36px, 5vw, 80px); text-align: left; }
 .hero-intro h1 { display: block; margin: 0; font-size: clamp(23px, 2.1vw, 34px); line-height: 1; letter-spacing: -.04em; font-weight: 500; }
 .hero-intro h1 span { color: var(--accent); }
 .hero-intro p { justify-self: center; max-width: 620px; margin: 0; font-size: 17px; line-height: 1.45; text-align: center; text-wrap: balance; }
@@ -332,7 +332,7 @@ footer { width: calc(100% + var(--content-gap)); min-height: max(820px, 100vh); 
   .language-toggle { top: 94px; left: calc(var(--section-gutter) + 66px); }
   .hero-caption { top: 94px; right: calc(var(--section-gutter) + var(--guide-rail)); }
   .hero-intro { top: 80px; left: 5vw; right: 5vw; bottom: auto; padding: 22px 28px 20px; grid-template-columns: 1fr 1.4fr; gap: 18px 28px; }
-  .hero-name { margin-left: 30px; }
+  .hero-name { margin-left: 5vw; }
   .hero-tech-marquee { top: auto; right: 3vw; bottom: 150px; width: 64%; }
   .service-orbit { top: 20%; right: 6vw; width: 159px; }
   .section-heading { grid-template-columns: 1fr; gap: 20px; }
@@ -362,7 +362,7 @@ footer { width: calc(100% + var(--content-gap)); min-height: max(820px, 100vh); 
   .hero-caption .cv-download, .hero-caption .copy-email-button, .hero-caption .hero-contact-button { width: 100%; min-width: 0; white-space: nowrap; }
   .copy-email-button { gap: 4px; }
   .hero-intro { top: 126px; left: 0; right: 0; width: auto; bottom: auto; padding: 0 20px; display: flex; flex-direction: column; align-items: stretch; gap: 14px; background: transparent; backdrop-filter: none; }
-  .hero-name { order: 1; align-self: flex-start; min-width: 0; margin: 0 0 0 43px; transform: none; text-align: left; }
+  .hero-name { order: 1; align-self: flex-start; min-width: 0; margin: 0 0 0 7vw; transform: none; text-align: left; }
   .hero-intro h1 { font-size: clamp(17px, 4.8vw, 20px); white-space: nowrap; }
   .hero-caption-copy { align-items: flex-start; width: auto; margin-top: 7px; font-size: 8px; }
   .hero-tech-marquee { top: auto; left: 20px; right: 20px; bottom: 126px; width: auto; margin: 0; transform: none; }

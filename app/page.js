@@ -37,7 +37,7 @@ const contactEmail = "igng_11@hotmail.com";
 
 const translations = {
   es: {
-    nav: ["Para quién", "Nuestro trabajo", "Proceso", "Resultado", "FAQ"],
+    nav: ["Nuestro trabajo", "Qué hacemos", "Proceso", "FAQ"],
     contact: "Contacto",
     menuOpen: "Abrir menú",
     menuClose: "Cerrar menú",
@@ -55,18 +55,16 @@ const translations = {
     marqueeServices: ["VIDEO", "DISEÑO", "WEB", "CONTENIDO", "IDENTIDAD", "LANDING PAGES", "REDES", "CAMPAÑAS"],
     servicesOrbit: "VIDEO · DISEÑO · WEB · CONTENIDO · IDENTIDAD · PRESENCIA DIGITAL · ",
     guides: {
-      "": "DESCUBRÍ VORUN",
-      audiencia: "MIRÁ NUESTRO TRABAJO",
-      proyectos: "CONOCÉ EL PROCESO",
-      proceso: "DESCUBRÍ EL RESULTADO",
-      beneficios: "RESOLVÉ TUS DUDAS",
+      "": "MIRÁ NUESTRO TRABAJO",
+      proyectos: "CONOCÉ QUÉ HACEMOS",
+      servicios: "CONOCÉ EL PROCESO",
+      proceso: "RESOLVÉ TUS DUDAS",
       faq: "HABLEMOS DE TU NEGOCIO",
       contacto: "MOSTRANOS TU NEGOCIO"
     },
     work: {
-      index: "02 / NUESTRO TRABAJO",
-      title: ["Nuestro trabajo,", "hecho para destacar."],
-      text: "Cada proyecto combina estrategia, identidad y ejecución para mostrar mejor el valor de una marca.",
+      index: "01 / NUESTRO TRABAJO",
+      title: ["Mirá lo que", "hacemos."],
       projects: [
         "Plataforma de\nmarketing automation",
         "Sistema web,\nmarca y app",
@@ -74,78 +72,76 @@ const translations = {
       ],
       cases: [
         {
-          headline: "Una plataforma que convierte la complejidad comercial en claridad.",
-          summary: "Osa reúne marketing automation, estrategia y operación en una experiencia digital pensada para explicar una propuesta compleja de forma simple y convincente.",
+          headline: "Una propuesta difícil de explicar necesitaba una presencia digital fácil de entender.",
+          summary: "",
           created: "Estrategia digital · Diseño web · Desarrollo",
-          differential: "Transformar un servicio técnico en una marca clara, cercana y preparada para crecer.",
+          differential: "Convertir complejidad en claridad.",
           cta: "CONOCER OSA"
         },
         {
-          headline: "Una marca conectada en todos sus puntos de contacto.",
-          summary: "Mads integra identidad, plataforma web y aplicación dentro de un mismo sistema, evitando que cada pieza funcione como una experiencia aislada.",
+          headline: "Identidad, web y producto digital diseñados para sentirse como una misma marca.",
+          summary: "",
           created: "Identidad visual · Sistema web · Aplicación",
-          differential: "Una experiencia coherente que acompaña a la marca desde la primera impresión hasta el uso cotidiano.",
+          differential: "Una experiencia coherente de principio a fin.",
           cta: "VER PROYECTO MADS"
         },
         {
-          headline: "La operación gastronómica convertida en contenido que abre el apetito.",
-          summary: "La Cuoca une gestión de pedidos y comunicación visual para que la experiencia del negocio también se perciba con claridad en sus canales digitales.",
-          created: "Contenido audiovisual · Comunicación · Experiencia digital",
-          differential: "Combinar utilidad y deseo: resolver la operación sin perder el atractivo propio de una marca gastronómica.",
+          headline: "Tecnología y contenido para hacer más simple la operación sin perder el atractivo de la marca.",
+          summary: "",
+          created: "Contenido audiovisual · Producto digital · Comunicación",
+          differential: "Utilidad y deseo en una misma experiencia.",
           cta: "VER LA CUOCA"
         }
       ]
     },
-    audience: {
-      index: "01 / PARA QUIÉN ES VORUN",
-      title: ["Tu negocio ya tiene valor.", "Hagámoslo visible."],
-      kicker: "NEGOCIOS LOCALES · EMPRENDIMIENTOS · PYMES",
-      lead: "Para negocios que trabajan bien, pero cuya presencia digital todavía no refleja su verdadero valor.",
-      bio: "Cafeterías, gastronomía, pet shops, talleres, barberías, tiendas y servicios. No necesitás ser más grande: necesitás mostrarte mejor."
+    services: {
+      index: "02 / QUÉ HACEMOS",
+      title: ["Una marca.", "Distintas herramientas."],
+      groups: [
+        ["IDENTIDAD", ["Branding", "Dirección visual", "Piezas gráficas"]],
+        ["CONTENIDO", ["Video", "Campañas", "Redes"]],
+        ["DIGITAL", ["Web", "Landing pages", "Productos digitales"]]
+      ]
     },
     process: {
       index: "03 / CÓMO TRABAJAMOS",
       title: ["Simple, directo", "y listo para publicar."],
-      text: "Un proceso claro para pasar de tu negocio real a una propuesta que lo represente mejor.",
+      text: "Un proceso claro para pasar de lo que tenés hoy a una presencia que represente mejor tu negocio.",
       steps: [
         ["NOS MOSTRÁS TU NEGOCIO", "Compartís tu producto, servicio y el material disponible."],
         ["CREAMOS LA PROPUESTA", "Definimos el enfoque y desarrollamos las piezas adecuadas."],
-        ["RECIBÍS EL CONTENIDO", "Te entregamos el resultado final, listo para usar y publicar."]
+        ["RECIBÍS EL RESULTADO", "Te entregamos el resultado final, listo para usar."]
       ]
     },
-    benefit: {
-      index: "04 / EL RESULTADO",
-      title: ["Una mejor", "primera impresión."],
-      kicker: "MÁS ATENCIÓN · MÁS CONFIANZA · MEJOR PERCEPCIÓN",
-      lead: "No inventamos grandeza. Hacemos visible la calidad que ya existe en tu negocio.",
-      bio: "Mejoramos cómo se presenta tu marca sin convertirla en algo que no es. El negocio permanece delante; la tecnología, detrás."
+    editorial: {
+      title: ["El negocio permanece delante.", "La tecnología, detrás."]
     },
     faq: {
-      index: "05 / PREGUNTAS FRECUENTES",
+      index: "04 / PREGUNTAS FRECUENTES",
       title: ["Todo claro", "antes de empezar."],
       kicker: "SIN FRICCIONES · SIN LETRA CHICA",
       items: [
-        ["¿Qué puede hacer Vorun por mi negocio?", "Trabajamos sobre la forma en que tu negocio se presenta: desde contenido audiovisual y piezas gráficas hasta identidad visual y desarrollo web. Podemos resolver una necesidad puntual o desarrollar una propuesta más completa según lo que necesites."],
+        ["¿Qué podemos hacer por tu negocio?", "Trabajamos sobre la forma en que tu negocio se presenta: desde contenido audiovisual y piezas gráficas hasta identidad visual y desarrollo web. Podemos resolver una necesidad puntual o desarrollar una propuesta más completa según lo que necesites."],
         ["¿Necesito tener fotos o videos profesionales?", "No. Podemos trabajar con el material que ya tengas y evaluar qué podemos aprovechar. Dependiendo del proyecto, también podemos crear nuevos recursos visuales y combinarlos con tus fotos, productos e identidad actual."],
         ["¿Los videos muestran mi negocio tal como es?", "Nuestro objetivo no es hacer que tu negocio parezca algo que no es, sino presentar mejor lo que ya existe. Podemos crear situaciones y recursos visuales con IA, pero siempre buscamos que la pieza sea coherente con tu producto, identidad y propuesta."],
         ["¿Trabajan solamente con videos hechos con IA?", "No. La IA es una de nuestras herramientas, no el servicio. Según el proyecto podemos combinar generación audiovisual, edición, diseño gráfico, branding y desarrollo web."],
         ["¿Cuánto demora un proyecto?", "Depende del trabajo. Una pieza audiovisual sencilla puede resolverse en pocos días, mientras que una identidad visual, una web o un proyecto más elaborado requieren otros tiempos. Antes de empezar acordamos alcance, plazo y entregables."],
         ["¿Cómo empezamos?", "Contanos sobre tu negocio y qué necesitás mejorar. Si todavía no lo tenés claro, también podés mostrarnos tu marca actual y contarnos qué querés conseguir. A partir de ahí evaluamos qué podemos hacer y te presentamos una propuesta."]
-      ],
-      ctaTitle: "Mostranos tu negocio.",
-      ctaLabel: "HABLEMOS POR WHATSAPP"
+      ]
     },
     footer: {
-      index: "06 / CONTACTO",
+      index: "05 / CONTACTO",
       title: ["Mostranos", "tu negocio."],
-      kicker: "TE CONTAMOS CÓMO PODRÍA MOSTRARSE MEJOR",
+      kicker: "CONTANOS QUÉ TENÉS · VEMOS QUÉ PODEMOS HACER",
+      support: "No necesitás llegar con una idea resuelta. Mandanos tu web, Instagram, producto o proyecto y contanos qué querés mejorar.",
+      ctaLabel: "HABLEMOS POR WHATSAPP ↗",
       location: "BUENOS AIRES · ARGENTINA\nTRABAJANDO CON NEGOCIOS DE HABLA HISPANA",
       copyright: "© 2026 — VORUN STUDIO"
     },
     backToTop: "Volver arriba"
   },
   en: {
-    nav: ["Who it's for", "Our work", "Process", "Result", "FAQ"],
+    nav: ["Our work", "What we do", "Process", "FAQ"],
     contact: "Contact",
     menuOpen: "Open menu",
     menuClose: "Close menu",
@@ -163,18 +159,16 @@ const translations = {
     marqueeServices: ["VIDEO", "DESIGN", "WEB", "CONTENT", "BRANDING", "LANDING PAGES", "SOCIAL MEDIA", "CAMPAIGNS"],
     servicesOrbit: "VIDEO · DESIGN · WEB · CONTENT · BRANDING · DIGITAL PRESENCE · ",
     guides: {
-      "": "DISCOVER VORUN",
-      audiencia: "EXPLORE OUR WORK",
-      proyectos: "SEE OUR PROCESS",
-      proceso: "DISCOVER THE RESULT",
-      beneficios: "CLEAR YOUR DOUBTS",
+      "": "EXPLORE OUR WORK",
+      proyectos: "SEE WHAT WE DO",
+      servicios: "SEE OUR PROCESS",
+      proceso: "CLEAR YOUR DOUBTS",
       faq: "LET'S TALK ABOUT YOUR BUSINESS",
       contacto: "SHOW US YOUR BUSINESS"
     },
     work: {
-      index: "02 / OUR WORK",
-      title: ["Our work,", "made to stand out."],
-      text: "Every project combines strategy, identity, and execution to present a brand's value more clearly.",
+      index: "01 / OUR WORK",
+      title: ["See what we", "do."],
       projects: [
         "Marketing automation\nplatform",
         "Web platform,\nbrand and app",
@@ -182,71 +176,69 @@ const translations = {
       ],
       cases: [
         {
-          headline: "A platform that turns commercial complexity into clarity.",
-          summary: "Osa brings marketing automation, strategy, and operations into a digital experience designed to explain a complex offer simply and convincingly.",
+          headline: "A difficult proposition to explain needed a digital presence that was easy to understand.",
+          summary: "",
           created: "Digital strategy · Web design · Development",
-          differential: "Turning a technical service into a clear, approachable brand ready to grow.",
+          differential: "Turning complexity into clarity.",
           cta: "DISCOVER OSA"
         },
         {
-          headline: "One connected brand across every touchpoint.",
-          summary: "Mads brings identity, web platform, and application into one system, preventing each piece from feeling like an isolated experience.",
+          headline: "Identity, web, and digital product designed to feel like one brand.",
+          summary: "",
           created: "Visual identity · Web system · Application",
-          differential: "A coherent experience that supports the brand from first impression to everyday use.",
+          differential: "A coherent experience from beginning to end.",
           cta: "VIEW MADS PROJECT"
         },
         {
-          headline: "Food operations transformed into content that builds appetite.",
-          summary: "La Cuoca combines order management and visual communication so the business experience is also perceived clearly across its digital channels.",
-          created: "Audiovisual content · Communication · Digital experience",
-          differential: "Combining utility and desire: solving operations without losing the appeal of a food brand.",
+          headline: "Technology and content that simplify operations without losing the brand's appeal.",
+          summary: "",
+          created: "Audiovisual content · Digital product · Communication",
+          differential: "Utility and desire in one experience.",
           cta: "VIEW LA CUOCA"
         }
       ]
     },
-    audience: {
-      index: "01 / WHO VORUN IS FOR",
-      title: ["Your business already has value.", "Let's make it visible."],
-      kicker: "LOCAL BUSINESSES · ENTREPRENEURS · SMALL COMPANIES",
-      lead: "For businesses that do great work, but whose digital presence does not yet reflect their true value.",
-      bio: "Coffee shops, restaurants, pet shops, workshops, barbershops, stores, and services. You don't need to be bigger: you need to present yourself better."
+    services: {
+      index: "02 / WHAT WE DO",
+      title: ["One brand.", "Different tools."],
+      groups: [
+        ["IDENTITY", ["Branding", "Visual direction", "Graphic pieces"]],
+        ["CONTENT", ["Video", "Campaigns", "Social media"]],
+        ["DIGITAL", ["Web", "Landing pages", "Digital products"]]
+      ]
     },
     process: {
       index: "03 / HOW WE WORK",
       title: ["Simple, direct,", "and ready to publish."],
-      text: "A clear process to turn your real business into a proposal that represents it better.",
+      text: "A clear process to move from what you have today to a presence that represents your business better.",
       steps: [
         ["SHOW US YOUR BUSINESS", "Share your product, service, and the material you already have."],
         ["WE CREATE THE PROPOSAL", "We define the approach and develop the right pieces."],
-        ["YOU RECEIVE THE CONTENT", "We deliver the final result, ready to use and publish."]
+        ["YOU RECEIVE THE RESULT", "We deliver the final result, ready to use."]
       ]
     },
-    benefit: {
-      index: "04 / THE RESULT",
-      title: ["A better", "first impression."],
-      kicker: "MORE ATTENTION · MORE TRUST · BETTER PERCEPTION",
-      lead: "We don't invent greatness. We make the quality already present in your business visible.",
-      bio: "We improve how your brand presents itself without turning it into something it is not. Your business stays in front; technology stays behind."
+    editorial: {
+      title: ["The business stays in front.", "Technology stays behind."]
     },
     faq: {
-      index: "05 / FREQUENTLY ASKED QUESTIONS",
+      index: "04 / FREQUENTLY ASKED QUESTIONS",
       title: ["Everything clear", "before we begin."],
       kicker: "NO FRICTION · NO FINE PRINT",
       items: [
-        ["What can Vorun do for my business?", "We work on how your business presents itself, from audiovisual content and graphic pieces to visual identity and web development. We can solve a specific need or develop a more complete proposal based on what you need."],
+        ["What can we do for your business?", "We work on how your business presents itself, from audiovisual content and graphic pieces to visual identity and web development. We can solve a specific need or develop a more complete proposal based on what you need."],
         ["Do I need professional photos or videos?", "No. We can work with the material you already have and assess what can be used. Depending on the project, we can also create new visual resources and combine them with your photos, products, and current identity."],
         ["Do the videos show my business as it really is?", "Our goal is not to make your business look like something it is not, but to present what already exists more effectively. We can create situations and visual resources with AI, but we always aim for each piece to remain coherent with your product, identity, and proposition."],
         ["Do you only work with AI-generated videos?", "No. AI is one of our tools, not the service itself. Depending on the project, we can combine audiovisual generation, editing, graphic design, branding, and web development."],
         ["How long does a project take?", "It depends on the work. A simple audiovisual piece may be completed in a few days, while a visual identity, website, or more elaborate project requires a different timeline. Before starting, we agree on the scope, schedule, and deliverables."],
         ["How do we get started?", "Tell us about your business and what you need to improve. If you are not sure yet, you can also show us your current brand and tell us what you want to achieve. From there, we assess what we can do and present a proposal."]
-      ],
-      ctaTitle: "Show us your business.",
-      ctaLabel: "LET'S TALK ON WHATSAPP"
+      ]
     },
     footer: {
-      index: "06 / CONTACT",
+      index: "05 / CONTACT",
       title: ["Show us", "your business."],
-      kicker: "WE'LL TELL YOU HOW IT COULD PRESENT ITSELF BETTER",
+      kicker: "TELL US WHAT YOU HAVE · WE'LL SEE WHAT WE CAN DO",
+      support: "You don't need to arrive with a finished idea. Send us your website, Instagram, product, or project and tell us what you want to improve.",
+      ctaLabel: "LET'S TALK ON WHATSAPP ↗",
       location: "BUENOS AIRES · ARGENTINA\nWORKING WITH SPANISH-SPEAKING BUSINESSES",
       copyright: "© 2026 — VORUN STUDIO"
     },
@@ -346,7 +338,7 @@ export default function Home() {
     );
     const updateScrollState = () => {
       const marker = window.scrollY + window.innerHeight * 0.42;
-      const sectionIds = ["audiencia", "proyectos", "proceso", "beneficios", "faq", "contacto"];
+      const sectionIds = ["proyectos", "servicios", "proceso", "faq", "contacto"];
       const current = sectionIds.reduce((active, id) => {
         const section = document.getElementById(id);
         return section && section.offsetTop <= marker ? id : active;
@@ -395,11 +387,10 @@ export default function Home() {
     window.setTimeout(() => setEmailCopied(false), 1600);
   };
   const scrollGuide = {
-    "": { label: t.guides[""], href: "#audiencia", arrow: "↓" },
-    audiencia: { label: t.guides.audiencia, href: "#proyectos", arrow: "↓" },
-    proyectos: { label: t.guides.proyectos, href: "#proceso", arrow: "↓" },
-    proceso: { label: t.guides.proceso, href: "#beneficios", arrow: "↓" },
-    beneficios: { label: t.guides.beneficios, href: "#faq", arrow: "↓" },
+    "": { label: t.guides[""], href: "#proyectos", arrow: "↓" },
+    proyectos: { label: t.guides.proyectos, href: "#servicios", arrow: "↓" },
+    servicios: { label: t.guides.servicios, href: "#proceso", arrow: "↓" },
+    proceso: { label: t.guides.proceso, href: "#faq", arrow: "↓" },
     faq: { label: t.guides.faq, href: "#contacto", arrow: "↓" },
     contacto: {
       label: t.guides.contacto,
@@ -421,25 +412,21 @@ export default function Home() {
           />
         </a>
         <nav className={menuOpen ? "nav open" : "nav"} id="nav-principal">
-          <a className={activeSection === "audiencia" ? "active" : ""} href="#audiencia" onClick={closeMenu}>
-            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="audience" /></span>
-            <span className="nav-label">{t.nav[0]}</span>
-          </a>
           <a className={activeSection === "proyectos" ? "active" : ""} href="#proyectos" onClick={closeMenu}>
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="work" /></span>
+            <span className="nav-label">{t.nav[0]}</span>
+          </a>
+          <a className={activeSection === "servicios" ? "active" : ""} href="#servicios" onClick={closeMenu}>
+            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="audience" /></span>
             <span className="nav-label">{t.nav[1]}</span>
           </a>
           <a className={activeSection === "proceso" ? "active" : ""} href="#proceso" onClick={closeMenu}>
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="process" /></span>
             <span className="nav-label">{t.nav[2]}</span>
           </a>
-          <a className={activeSection === "beneficios" ? "active" : ""} href="#beneficios" onClick={closeMenu}>
-            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="result" /></span>
-            <span className="nav-label">{t.nav[3]}</span>
-          </a>
           <a className={activeSection === "faq" ? "active" : ""} href="#faq" onClick={closeMenu}>
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="faq" /></span>
-            <span className="nav-label">{t.nav[4]}</span>
+            <span className="nav-label">{t.nav[3]}</span>
           </a>
           <a className={activeSection === "contacto" ? "mobile-nav-contact active" : "mobile-nav-contact"} href="#contacto" onClick={closeMenu}>
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="contact" /></span>
@@ -551,23 +538,10 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="statement section-pad" id="audiencia">
-        <div className="section-heading reveal">
-          <div className="section-index">{t.audience.index}</div>
-          <h2>{t.audience.title[0]}<br /><em>{t.audience.title[1]}</em></h2>
-          <p>{t.audience.kicker}</p>
-        </div>
-        <div className="statement-grid reveal">
-          <p className="lead">{t.audience.lead}</p>
-          <div className="bio"><p>{t.audience.bio}</p></div>
-        </div>
-      </section>
-
       <section className="work section-pad" id="proyectos">
         <div className="section-heading reveal">
           <div className="section-index">{t.work.index}</div>
           <h2>{t.work.title[0]}<br /><em>{t.work.title[1]}</em></h2>
-          <p>{t.work.text}</p>
         </div>
         <div className="project-list">
           {projects.map((project, projectIndex) => (
@@ -590,7 +564,7 @@ export default function Home() {
               </a>
               <div className="project-case-copy">
                 <h3>{t.work.cases[projectIndex].headline}</h3>
-                <p className="project-case-summary">{t.work.cases[projectIndex].summary}</p>
+                {t.work.cases[projectIndex].summary ? <p className="project-case-summary">{t.work.cases[projectIndex].summary}</p> : null}
                 <div className="project-case-details">
                   <div>
                     <span>{language === "es" ? "CREAMOS" : "WE CREATED"}</span>
@@ -608,6 +582,19 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="statement section-pad" id="servicios">
+        <div className="section-heading reveal">
+          <div className="section-index">{t.services.index}</div>
+          <h2>{t.services.title[0]}<br /><em>{t.services.title[1]}</em></h2>
+        </div>
+        {t.services.groups.map(([group, items]) => (
+          <div className="statement-grid reveal" key={group}>
+            <p className="lead">{group}</p>
+            <div className="bio"><p><Multiline text={items.join("\n")} /></p></div>
+          </div>
+        ))}
       </section>
 
       <section className="experience section-pad" id="proceso">
@@ -633,15 +620,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="statement section-pad" id="beneficios">
-        <div className="section-heading reveal">
-          <div className="section-index">{t.benefit.index}</div>
-          <h2>{t.benefit.title[0]}<br /><em>{t.benefit.title[1]}</em></h2>
-          <p>{t.benefit.kicker}</p>
-        </div>
-        <div className="statement-grid reveal">
-          <p className="lead">{t.benefit.lead}</p>
-          <div className="bio"><p>{t.benefit.bio}</p></div>
+      <section className="statement section-pad" id="editorial">
+        <div className="section-heading footer-heading reveal">
+          <div className="section-index" aria-hidden="true" />
+          <h2>{t.editorial.title[0]}<br /><em>{t.editorial.title[1]}</em></h2>
         </div>
       </section>
 
@@ -657,14 +639,6 @@ export default function Home() {
             <div className="bio"><p>{answer}</p></div>
           </div>
         ))}
-        <div className="statement-grid reveal">
-          <p className="lead">{t.faq.ctaTitle}</p>
-          <div className="bio">
-            <a className="project-case-link" href="https://wa.me/5491133221897" target="_blank" rel="noopener">
-              {t.faq.ctaLabel}<span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
       </section>
 
       <footer id="contacto">
@@ -672,7 +646,11 @@ export default function Home() {
           <div className="section-heading footer-heading reveal">
             <div className="section-index">{t.footer.index}</div>
             <h2>{t.footer.title[0]}<br /><em>{t.footer.title[1]}</em></h2>
-            <p>{t.footer.kicker}</p>
+            <p>
+              <span>{t.footer.kicker}</span><br /><br />
+              <span>{t.footer.support}</span><br /><br />
+              <a href="https://wa.me/5491133221897" target="_blank" rel="noopener">{t.footer.ctaLabel}</a>
+            </p>
           </div>
         </div>
         <div className="footer-bottom">
