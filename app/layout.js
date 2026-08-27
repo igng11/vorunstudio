@@ -35,8 +35,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/italiana-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/hero-dark.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/hero-white.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/brand-mark-dark.png" as="image" type="image/png" />
+        <link rel="preload" href="/brand-mark-light.png" as="image" type="image/png" />
       </head>
       <body data-sidebar="collapsed">{children}</body>
     </html>

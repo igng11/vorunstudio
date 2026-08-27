@@ -16,6 +16,7 @@
     "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
   },
   "dependencies": {
+    "@firecms/neat": "^1.0.2",
     "@vinext/cloudflare": "^1.0.0-beta.3",
     "next": "15.5.7",
     "react": "19.2.6",

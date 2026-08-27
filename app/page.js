@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useState } from "react";
+import HeroGradientMark from "./HeroGradientMark";
 
 const projects = [
   {
@@ -49,6 +50,7 @@ const translations = {
     copyEmail: "Copiar email",
     emailCopied: "Email copiado",
     heroText: "Ayudamos a negocios locales a verse como marcas más grandes.",
+    heroSubtitle: ["PRESENCIA", "DIGITAL"],
     services: "Servicios",
     marqueeServices: ["VIDEO", "DISEÑO", "WEB", "CONTENIDO", "IDENTIDAD", "LANDING PAGES", "REDES", "CAMPAÑAS"],
     servicesOrbit: "VIDEO · DISEÑO · WEB · CONTENIDO · IDENTIDAD · PRESENCIA DIGITAL · ",
@@ -156,6 +158,7 @@ const translations = {
     copyEmail: "Copy email",
     emailCopied: "Email copied",
     heroText: "We help local businesses look like bigger brands.",
+    heroSubtitle: ["DIGITAL", "PRESENCE"],
     services: "Services",
     marqueeServices: ["VIDEO", "DESIGN", "WEB", "CONTENT", "BRANDING", "LANDING PAGES", "SOCIAL MEDIA", "CAMPAIGNS"],
     servicesOrbit: "VIDEO · DESIGN · WEB · CONTENT · BRANDING · DIGITAL PRESENCE · ",
@@ -461,26 +464,7 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="portrait-wrap">
-          <img
-            className="portrait-image portrait-dark"
-            src="/hero-dark.svg"
-            alt={t.portraitAlt}
-            width="224"
-            height="220"
-            fetchPriority="high"
-            loading="eager"
-            decoding="sync"
-          />
-          <img
-            className="portrait-image portrait-light"
-            src="/hero-white.svg"
-            alt=""
-            width="224"
-            height="220"
-            fetchPriority="high"
-            loading="eager"
-            decoding="sync"
-          />
+          <HeroGradientMark label={t.portraitAlt} />
         </div>
         <div className="service-orbit" aria-hidden="true">
           <svg className="service-orbit-ring" viewBox="0 0 160 160">
@@ -539,7 +523,7 @@ export default function Home() {
         <div className="hero-intro">
           <div className="hero-name">
             <h1>VORUN STUDIO</h1>
-            <div className="hero-caption-copy"><span>CREATIVE</span><span>STUDIO</span></div>
+            <div className="hero-caption-copy"><span>{t.heroSubtitle[0]}</span><span>{t.heroSubtitle[1]}</span></div>
           </div>
           <p>{t.heroText}</p>
         </div>
