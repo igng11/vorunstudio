@@ -416,27 +416,54 @@ export default function Home() {
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="work" /></span>
             <span className="nav-label">{t.nav[0]}</span>
           </a>
-          <a className={activeSection === "servicios" ? "active" : ""} href="#servicios" onClick={closeMenu}>
-            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="audience" /></span>
-            <span className="nav-label">{t.nav[1]}</span>
-          </a>
-          <a className={activeSection === "proceso" ? "active" : ""} href="#proceso" onClick={closeMenu}>
-            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="process" /></span>
-            <span className="nav-label">{t.nav[2]}</span>
-          </a>
           <a className={activeSection === "faq" ? "active" : ""} href="#faq" onClick={closeMenu}>
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="faq" /></span>
             <span className="nav-label">{t.nav[3]}</span>
           </a>
-          <a className={activeSection === "contacto" ? "mobile-nav-contact active" : "mobile-nav-contact"} href="#contacto" onClick={closeMenu}>
-            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="contact" /></span>
-            <span className="nav-label">{t.contact}</span>
-          </a>
         </nav>
-        <a className={activeSection === "contacto" ? "header-contact active" : "header-contact"} href="#contacto">
-          <span className="nav-icon" aria-hidden="true"><SidebarIcon name="contact" /></span>
-          <span className="header-contact-label">{t.contact}</span>
-        </a>
+        <div className="hero-controls">
+          <button
+            className="theme-toggle"
+            type="button"
+            onClick={() => void changeTheme(theme === "dark" ? "light" : "dark")}
+            aria-label={theme === "dark" ? t.lightMode : t.darkMode}
+            aria-pressed={theme === "light"}
+          >
+            {theme === "dark" ? "LIGHT" : "DARK"}
+          </button>
+          <button
+            className="language-toggle"
+            type="button"
+            onClick={() => setLanguage((current) => current === "es" ? "en" : "es")}
+            aria-label={t.language}
+          >
+            <span className={language === "es" ? "active" : ""}>ES</span>
+            <i aria-hidden="true">/</i>
+            <span className={language === "en" ? "active" : ""}>EN</span>
+          </button>
+          <div className="hero-caption">
+            <button
+              className="cv-download"
+              type="button"
+              aria-label={t.cvSoon}
+              title={t.cvSoon}
+              disabled
+            >
+              VORUN
+            </button>
+            <button
+              className="copy-email-button"
+              type="button"
+              onClick={copyEmail}
+              aria-label={emailCopied ? t.emailCopied : t.copyEmail}
+              title={emailCopied ? t.emailCopied : contactEmail}
+            >
+              <span>{emailCopied ? "COPIED" : "MAIL"}</span>
+              <CopyIcon />
+            </button>
+            <a className="hero-contact-button" href="#contacto">{t.contact.toUpperCase()}</a>
+          </div>
+        </div>
         <button
           className="menu-button"
           type="button"
@@ -467,49 +494,6 @@ export default function Home() {
           </svg>
         </div>
         <div className="hero-ui">
-          <div className="hero-controls">
-          <button
-            className="theme-toggle"
-            type="button"
-            onClick={() => void changeTheme(theme === "dark" ? "light" : "dark")}
-            aria-label={theme === "dark" ? t.lightMode : t.darkMode}
-            aria-pressed={theme === "light"}
-          >
-            {theme === "dark" ? "LIGHT" : "DARK"}
-          </button>
-          <button
-            className="language-toggle"
-            type="button"
-            onClick={() => setLanguage((current) => current === "es" ? "en" : "es")}
-            aria-label={t.language}
-          >
-            <span className={language === "es" ? "active" : ""}>ES</span>
-            <i aria-hidden="true">/</i>
-            <span className={language === "en" ? "active" : ""}>EN</span>
-          </button>
-            <div className="hero-caption">
-            <button
-              className="cv-download"
-              type="button"
-              aria-label={t.cvSoon}
-              title={t.cvSoon}
-              disabled
-            >
-              VORUN
-            </button>
-            <button
-              className="copy-email-button"
-              type="button"
-              onClick={copyEmail}
-              aria-label={emailCopied ? t.emailCopied : t.copyEmail}
-              title={emailCopied ? t.emailCopied : contactEmail}
-            >
-              <span>{emailCopied ? "COPIED" : "MAIL"}</span>
-              <CopyIcon />
-            </button>
-            <a className="hero-contact-button" href="#contacto">{t.contact.toUpperCase()}</a>
-            </div>
-          </div>
           <div className="hero-intro">
             <div className="hero-name">
               <h1>VORUN STUDIO</h1>
