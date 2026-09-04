@@ -161,8 +161,8 @@ body[data-theme="light"] .service-orbit-star path { fill: var(--black); }
 .hero-caption { z-index: 3; position: absolute; top: 22px; right: calc(var(--section-gutter) + var(--guide-rail)); display: flex; align-items: center; gap: 12px; width: max-content; max-width: none; text-align: right; }
 .hero-caption-copy { display: flex; flex-direction: column; align-items: flex-start; flex-shrink: 0; width: max-content; margin-top: 8px; font-size: 9px; line-height: 1.35; letter-spacing: .28em; }
 .theme-toggle, .language-toggle, .cv-download, .copy-email-button, .hero-contact-button { height: 26px; display: flex; align-items: center; justify-content: center; min-width: 54px; margin: 0; padding: 0 10px; border: 1px solid currentColor; border-radius: 0; background: transparent; color: inherit; font-size: 9px; line-height: 1; letter-spacing: .12em; }
-.theme-toggle { position: absolute; z-index: 3; top: 22px; left: calc(var(--content-gap) + var(--section-gutter) + 12px); cursor: pointer; }
-.language-toggle { position: absolute; z-index: 3; top: 22px; left: calc(var(--content-gap) + var(--section-gutter) + 78px); gap: 5px; cursor: pointer; }
+.theme-toggle { position: absolute; z-index: 3; top: 22px; left: calc(28px + clamp(36px, 5vw, 80px)); cursor: pointer; }
+.language-toggle { position: absolute; z-index: 3; top: 22px; left: calc(94px + clamp(36px, 5vw, 80px)); gap: 5px; cursor: pointer; }
 .language-toggle span { opacity: .42; transition: opacity .2s ease, color .2s ease; }
 .language-toggle span.active { color: var(--accent); opacity: 1; }
 .language-toggle i { font-style: normal; opacity: .35; }
