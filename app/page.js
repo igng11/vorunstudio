@@ -466,46 +466,48 @@ export default function Home() {
             <path d="M32 6 37 27 58 32 37 37 32 58 27 37 6 32 27 27Z" />
           </svg>
         </div>
-        <button
-          className="theme-toggle"
-          type="button"
-          onClick={() => void changeTheme(theme === "dark" ? "light" : "dark")}
-          aria-label={theme === "dark" ? t.lightMode : t.darkMode}
-          aria-pressed={theme === "light"}
-        >
-          {theme === "dark" ? "LIGHT" : "DARK"}
-        </button>
-        <button
-          className="language-toggle"
-          type="button"
-          onClick={() => setLanguage((current) => current === "es" ? "en" : "es")}
-          aria-label={t.language}
-        >
-          <span className={language === "es" ? "active" : ""}>ES</span>
-          <i aria-hidden="true">/</i>
-          <span className={language === "en" ? "active" : ""}>EN</span>
-        </button>
-        <div className="hero-caption">
+        <div className="hero-controls">
           <button
-            className="cv-download"
+            className="theme-toggle"
             type="button"
-            aria-label={t.cvSoon}
-            title={t.cvSoon}
-            disabled
+            onClick={() => void changeTheme(theme === "dark" ? "light" : "dark")}
+            aria-label={theme === "dark" ? t.lightMode : t.darkMode}
+            aria-pressed={theme === "light"}
           >
-            VORUN
+            {theme === "dark" ? "LIGHT" : "DARK"}
           </button>
           <button
-            className="copy-email-button"
+            className="language-toggle"
             type="button"
-            onClick={copyEmail}
-            aria-label={emailCopied ? t.emailCopied : t.copyEmail}
-            title={emailCopied ? t.emailCopied : contactEmail}
+            onClick={() => setLanguage((current) => current === "es" ? "en" : "es")}
+            aria-label={t.language}
           >
-            <span>{emailCopied ? "COPIED" : "MAIL"}</span>
-            <CopyIcon />
+            <span className={language === "es" ? "active" : ""}>ES</span>
+            <i aria-hidden="true">/</i>
+            <span className={language === "en" ? "active" : ""}>EN</span>
           </button>
-          <a className="hero-contact-button" href="#contacto">{t.contact.toUpperCase()}</a>
+          <div className="hero-caption">
+            <button
+              className="cv-download"
+              type="button"
+              aria-label={t.cvSoon}
+              title={t.cvSoon}
+              disabled
+            >
+              VORUN
+            </button>
+            <button
+              className="copy-email-button"
+              type="button"
+              onClick={copyEmail}
+              aria-label={emailCopied ? t.emailCopied : t.copyEmail}
+              title={emailCopied ? t.emailCopied : contactEmail}
+            >
+              <span>{emailCopied ? "COPIED" : "MAIL"}</span>
+              <CopyIcon />
+            </button>
+            <a className="hero-contact-button" href="#contacto">{t.contact.toUpperCase()}</a>
+          </div>
         </div>
         <div className="hero-intro">
           <div className="hero-name">
