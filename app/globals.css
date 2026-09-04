@@ -152,7 +152,7 @@ body[data-theme="light"] .portrait-light { opacity: 1; }
 .service-orbit-star path { fill: var(--foreground); }
 body[data-theme="light"] .service-orbit { color: var(--black); }
 body[data-theme="light"] .service-orbit-star path { fill: var(--black); }
-.hero-controls { display: contents; }
+.hero-ui, .hero-controls { display: contents; }
 @keyframes service-orbit-swing {
   0%, 20% { transform: rotate(0deg); }
   45%, 55% { transform: rotate(180deg); }
@@ -356,14 +356,15 @@ footer { width: calc(100% + var(--content-gap)); min-height: max(820px, 100vh); 
   .hero { min-height: 700px; }
   .site-header { padding-left: var(--mobile-hero-gutter); padding-right: var(--mobile-hero-gutter); }
   .portrait-wrap { width: 84vw; height: auto; aspect-ratio: 224 / 220; left: var(--mobile-hero-gutter); bottom: 155px; }
-  .hero-controls { position: absolute; z-index: 8; top: 94px; left: var(--mobile-hero-gutter); right: var(--mobile-hero-gutter); display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 4px; }
+  .hero-ui { position: absolute; z-index: 8; top: 94px; left: var(--mobile-hero-gutter); right: var(--mobile-hero-gutter); display: flex; flex-direction: column; gap: 26px; }
+  .hero-controls { display: flex; width: 100%; gap: 4px; }
   .hero-controls .theme-toggle, .hero-controls .language-toggle, .hero-controls .hero-caption { position: static; inset: auto; }
-  .hero-caption { width: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+  .hero-caption { flex: 1 1 auto; min-width: 0; width: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
   .theme-toggle, .language-toggle, .cv-download, .copy-email-button, .hero-contact-button { height: 28px; min-width: 48px; padding: 0 6px; font-size: 8px; letter-spacing: .08em; }
   .hero-caption .cv-download { display: none; }
   .hero-caption .cv-download, .hero-caption .copy-email-button, .hero-caption .hero-contact-button { width: 100%; min-width: 0; white-space: nowrap; }
   .copy-email-button { gap: 4px; }
-  .hero-intro { top: 148px; left: 0; right: 0; width: auto; bottom: auto; padding: 0 var(--mobile-hero-gutter); display: flex; flex-direction: column; align-items: stretch; gap: 14px; background: transparent; backdrop-filter: none; }
+  .hero-intro { position: static; inset: auto; width: 100%; padding: 0; display: flex; flex-direction: column; align-items: stretch; gap: 14px; background: transparent; backdrop-filter: none; }
   .hero-name { order: 1; align-self: flex-start; min-width: 0; margin: 0; transform: none; text-align: left; }
   .hero-intro h1 { font-size: clamp(17px, 4.8vw, 20px); white-space: nowrap; }
   .hero-caption-copy { align-items: flex-start; width: auto; margin-top: 7px; font-size: 8px; }

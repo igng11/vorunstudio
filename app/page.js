@@ -466,7 +466,8 @@ export default function Home() {
             <path d="M32 6 37 27 58 32 37 37 32 58 27 37 6 32 27 27Z" />
           </svg>
         </div>
-        <div className="hero-controls">
+        <div className="hero-ui">
+          <div className="hero-controls">
           <button
             className="theme-toggle"
             type="button"
@@ -486,7 +487,7 @@ export default function Home() {
             <i aria-hidden="true">/</i>
             <span className={language === "en" ? "active" : ""}>EN</span>
           </button>
-          <div className="hero-caption">
+            <div className="hero-caption">
             <button
               className="cv-download"
               type="button"
@@ -507,14 +508,15 @@ export default function Home() {
               <CopyIcon />
             </button>
             <a className="hero-contact-button" href="#contacto">{t.contact.toUpperCase()}</a>
+            </div>
           </div>
-        </div>
-        <div className="hero-intro">
-          <div className="hero-name">
-            <h1>VORUN STUDIO</h1>
-            <div className="hero-caption-copy"><span>{t.heroSubtitle[0]}</span><span>{t.heroSubtitle[1]}</span></div>
+          <div className="hero-intro">
+            <div className="hero-name">
+              <h1>VORUN STUDIO</h1>
+              <div className="hero-caption-copy"><span>{t.heroSubtitle[0]}</span><span>{t.heroSubtitle[1]}</span></div>
+            </div>
+            <p>{t.heroText}</p>
           </div>
-          <p>{t.heroText}</p>
         </div>
         <div className="hero-tech-marquee" aria-label={t.services}>
           <div className="hero-tech-track">
