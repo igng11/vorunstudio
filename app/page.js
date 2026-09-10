@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import HeroGradientMark from "./HeroGradientMark";
 
 const projects = [
@@ -37,7 +37,7 @@ const contactEmail = "igng_11@hotmail.com";
 
 const translations = {
   es: {
-    nav: ["Nuestro trabajo", "Qué hacemos", "Proceso", "FAQ"],
+    nav: ["Nuestro trabajo", "Qué hacemos", "Proceso", "Preguntas frecuentes"],
     contact: "Contacto",
     menuOpen: "Abrir menú",
     menuClose: "Cerrar menú",
@@ -50,7 +50,6 @@ const translations = {
     copyEmail: "Copiar email",
     emailCopied: "Email copiado",
     heroText: "Ayudamos a negocios locales a verse como marcas más grandes.",
-    heroSubtitle: ["PRESENCIA", "DIGITAL"],
     services: "Servicios",
     marqueeServices: ["VIDEO", "DISEÑO", "WEB", "CONTENIDO", "IDENTIDAD", "LANDING PAGES", "REDES", "CAMPAÑAS"],
     servicesOrbit: "VIDEO · DISEÑO · WEB · CONTENIDO · IDENTIDAD · PRESENCIA DIGITAL · ",
@@ -65,6 +64,14 @@ const translations = {
     work: {
       index: "01 / NUESTRO TRABAJO",
       title: ["Mirá lo que", "hacemos."],
+      gallery: {
+        label: "SELECCIÓN / 2026",
+        items: [
+          ["01", "PIZZERÍA", "CAMPAÑA", "/pizzeria.mp4"],
+          ["02", "CAFETERÍA", "CONTENIDO", "/cafeteria.mp4"],
+          ["03", "TRIVUM", "CULTURA", "/cultura.mp4"]
+        ]
+      },
       projects: [
         "Plataforma de\nmarketing automation",
         "Sistema web,\nmarca y app",
@@ -72,24 +79,21 @@ const translations = {
       ],
       cases: [
         {
-          headline: "Una propuesta difícil de explicar necesitaba una presencia digital fácil de entender.",
+          headline: "De la complejidad, a la claridad.",
           summary: "",
           created: "Estrategia digital · Diseño web · Desarrollo",
-          differential: "Convertir complejidad en claridad.",
           cta: "CONOCER OSA"
         },
         {
-          headline: "Identidad, web y producto digital diseñados para sentirse como una misma marca.",
+          headline: "Todo conectado. Una sola marca.",
           summary: "",
           created: "Identidad visual · Sistema web · Aplicación",
-          differential: "Una experiencia coherente de principio a fin.",
           cta: "VER PROYECTO MADS"
         },
         {
-          headline: "Tecnología y contenido para hacer más simple la operación sin perder el atractivo de la marca.",
+          headline: "Funcionar mejor. Verse mejor.",
           summary: "",
           created: "Contenido audiovisual · Producto digital · Comunicación",
-          differential: "Utilidad y deseo en una misma experiencia.",
           cta: "VER LA CUOCA"
         }
       ]
@@ -105,12 +109,11 @@ const translations = {
     },
     process: {
       index: "03 / CÓMO TRABAJAMOS",
-      title: ["Simple, directo", "y listo para publicar."],
-      text: "Un proceso claro para pasar de lo que tenés hoy a una presencia que represente mejor tu negocio.",
+      title: ["Simple, directo.", "De principio a fin."],
       steps: [
-        ["NOS MOSTRÁS TU NEGOCIO", "Compartís tu producto, servicio y el material disponible."],
-        ["CREAMOS LA PROPUESTA", "Definimos el enfoque y desarrollamos las piezas adecuadas."],
-        ["RECIBÍS EL RESULTADO", "Te entregamos el resultado final, listo para usar."]
+        [["Nos mostrás", "tu negocio"], "Compartís lo que tenés y qué querés mejorar."],
+        [["Creamos", "la propuesta"], "Definimos qué hacer y cómo llevarlo adelante."],
+        [["Recibís", "el resultado"], "Te entregamos todo terminado y listo para usar."]
       ]
     },
     editorial: {
@@ -132,10 +135,8 @@ const translations = {
     footer: {
       index: "05 / CONTACTO",
       title: ["Mostranos", "tu negocio."],
-      kicker: "CONTANOS QUÉ TENÉS · VEMOS QUÉ PODEMOS HACER",
-      support: "No necesitás llegar con una idea resuelta. Mandanos tu web, Instagram, producto o proyecto y contanos qué querés mejorar.",
+      support: "No necesitás llegar con una idea resuelta. Mandanos tu web, Instagram o proyecto y vemos qué podemos hacer.",
       ctaLabel: "HABLEMOS POR WHATSAPP ↗",
-      location: "BUENOS AIRES · ARGENTINA\nTRABAJANDO CON NEGOCIOS DE HABLA HISPANA",
       copyright: "© 2026 — VORUN STUDIO"
     },
     backToTop: "Volver arriba"
@@ -154,7 +155,6 @@ const translations = {
     copyEmail: "Copy email",
     emailCopied: "Email copied",
     heroText: "We help local businesses look like bigger brands.",
-    heroSubtitle: ["DIGITAL", "PRESENCE"],
     services: "Services",
     marqueeServices: ["VIDEO", "DESIGN", "WEB", "CONTENT", "BRANDING", "LANDING PAGES", "SOCIAL MEDIA", "CAMPAIGNS"],
     servicesOrbit: "VIDEO · DESIGN · WEB · CONTENT · BRANDING · DIGITAL PRESENCE · ",
@@ -169,6 +169,14 @@ const translations = {
     work: {
       index: "01 / OUR WORK",
       title: ["See what we", "do."],
+      gallery: {
+        label: "SELECTION / 2026",
+        items: [
+          ["01", "PIZZERÍA", "CAMPAIGN", "/pizzeria.mp4"],
+          ["02", "CAFETERÍA", "CONTENT", "/cafeteria.mp4"],
+          ["03", "TRIVUM", "CULTURE", "/cultura.mp4"]
+        ]
+      },
       projects: [
         "Marketing automation\nplatform",
         "Web platform,\nbrand and app",
@@ -176,24 +184,21 @@ const translations = {
       ],
       cases: [
         {
-          headline: "A difficult proposition to explain needed a digital presence that was easy to understand.",
+          headline: "From complexity to clarity.",
           summary: "",
           created: "Digital strategy · Web design · Development",
-          differential: "Turning complexity into clarity.",
           cta: "DISCOVER OSA"
         },
         {
-          headline: "Identity, web, and digital product designed to feel like one brand.",
+          headline: "Everything connected. One brand.",
           summary: "",
           created: "Visual identity · Web system · Application",
-          differential: "A coherent experience from beginning to end.",
           cta: "VIEW MADS PROJECT"
         },
         {
-          headline: "Technology and content that simplify operations without losing the brand's appeal.",
+          headline: "Work better. Look better.",
           summary: "",
           created: "Audiovisual content · Digital product · Communication",
-          differential: "Utility and desire in one experience.",
           cta: "VIEW LA CUOCA"
         }
       ]
@@ -209,12 +214,11 @@ const translations = {
     },
     process: {
       index: "03 / HOW WE WORK",
-      title: ["Simple, direct,", "and ready to publish."],
-      text: "A clear process to move from what you have today to a presence that represents your business better.",
+      title: ["Simple, direct.", "From start to finish."],
       steps: [
-        ["SHOW US YOUR BUSINESS", "Share your product, service, and the material you already have."],
-        ["WE CREATE THE PROPOSAL", "We define the approach and develop the right pieces."],
-        ["YOU RECEIVE THE RESULT", "We deliver the final result, ready to use."]
+        [["Show us", "your business"], "Share what you have and what you want to improve."],
+        [["We create", "the proposal"], "We define what to do and how to move it forward."],
+        [["You receive", "the result"], "We deliver everything finished and ready to use."]
       ]
     },
     editorial: {
@@ -236,24 +240,13 @@ const translations = {
     footer: {
       index: "05 / CONTACT",
       title: ["Show us", "your business."],
-      kicker: "TELL US WHAT YOU HAVE · WE'LL SEE WHAT WE CAN DO",
-      support: "You don't need to arrive with a finished idea. Send us your website, Instagram, product, or project and tell us what you want to improve.",
+      support: "You don't need to arrive with a finished idea. Send us your website, Instagram, or project and we'll see what we can do.",
       ctaLabel: "LET'S TALK ON WHATSAPP ↗",
-      location: "BUENOS AIRES · ARGENTINA\nWORKING WITH SPANISH-SPEAKING BUSINESSES",
       copyright: "© 2026 — VORUN STUDIO"
     },
     backToTop: "Back to top"
   }
 };
-
-function CopyIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="8" y="8" width="11" height="11" rx="1" />
-      <path d="M16 8V5H5v11h3" />
-    </svg>
-  );
-}
 
 function Multiline({ text }) {
   const lines = text.split("\n");
@@ -318,7 +311,9 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("");
   const [theme, setTheme] = useState("dark");
   const [language, setLanguage] = useState("es");
-  const [emailCopied, setEmailCopied] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const [processStep, setProcessStep] = useState(0);
+  const headerHideTimer = useRef(null);
   const t = translations[language];
 
   const changeTheme = async (nextTheme) => {
@@ -380,12 +375,65 @@ export default function Home() {
     window.localStorage.setItem("language", language);
   }, [language]);
 
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const timer = window.setInterval(() => {
+      setProcessStep((step) => (step + 1) % translations.es.process.steps.length);
+    }, 2800);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const desktop = window.matchMedia("(min-width: 901px)");
+    const isNearTop = () => window.scrollY <= window.innerHeight * 0.12;
+
+    const clearHideTimer = () => {
+      if (headerHideTimer.current) window.clearTimeout(headerHideTimer.current);
+    };
+    const scheduleHide = () => {
+      clearHideTimer();
+      if (desktop.matches && !menuOpen && !isNearTop()) {
+        headerHideTimer.current = window.setTimeout(() => {
+          setHeaderVisible(isNearTop());
+        }, 3200);
+      }
+    };
+    const revealHeader = () => {
+      setHeaderVisible(true);
+      scheduleHide();
+    };
+    const handlePointerMove = (event) => {
+      if (event.clientY <= 112) revealHeader();
+    };
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (isNearTop() || currentScrollY < lastScrollY - 4) {
+        revealHeader();
+      } else if (currentScrollY > lastScrollY + 4 && currentScrollY > 80 && !menuOpen) {
+        clearHideTimer();
+        setHeaderVisible(false);
+      }
+      lastScrollY = currentScrollY;
+    };
+    const handleFocus = (event) => {
+      if (event.target.closest?.(".site-header")) revealHeader();
+    };
+
+    if (isNearTop() || menuOpen) revealHeader();
+    else scheduleHide();
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    document.addEventListener("focusin", handleFocus);
+    return () => {
+      clearHideTimer();
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("focusin", handleFocus);
+    };
+  }, [menuOpen]);
+
   const closeMenu = () => setMenuOpen(false);
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText(contactEmail);
-    setEmailCopied(true);
-    window.setTimeout(() => setEmailCopied(false), 1600);
-  };
   const scrollGuide = {
     "": { label: t.guides[""], href: "#proyectos", arrow: "↓" },
     proyectos: { label: t.guides.proyectos, href: "#servicios", arrow: "↓" },
@@ -402,7 +450,7 @@ export default function Home() {
 
   return (
     <main>
-      <header className="site-header">
+      <header className={headerVisible || menuOpen ? "site-header" : "site-header is-hidden"}>
         <a className="logo" href="#inicio" aria-label={t.home}>
           <img
             src={theme === "dark" ? "/brand-mark-dark.png" : "/brand-mark-light.png"}
@@ -415,6 +463,14 @@ export default function Home() {
           <a className={activeSection === "proyectos" ? "active" : ""} href="#proyectos" onClick={closeMenu}>
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="work" /></span>
             <span className="nav-label">{t.nav[0]}</span>
+          </a>
+          <a className={activeSection === "servicios" ? "active" : ""} href="#servicios" onClick={closeMenu}>
+            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="audience" /></span>
+            <span className="nav-label">{t.nav[1]}</span>
+          </a>
+          <a className={activeSection === "proceso" ? "active" : ""} href="#proceso" onClick={closeMenu}>
+            <span className="nav-icon" aria-hidden="true"><SidebarIcon name="process" /></span>
+            <span className="nav-label">{t.nav[2]}</span>
           </a>
           <a className={activeSection === "faq" ? "active" : ""} href="#faq" onClick={closeMenu}>
             <span className="nav-icon" aria-hidden="true"><SidebarIcon name="faq" /></span>
@@ -442,25 +498,6 @@ export default function Home() {
             <span className={language === "en" ? "active" : ""}>EN</span>
           </button>
           <div className="hero-caption">
-            <button
-              className="cv-download"
-              type="button"
-              aria-label={t.cvSoon}
-              title={t.cvSoon}
-              disabled
-            >
-              VORUN
-            </button>
-            <button
-              className="copy-email-button"
-              type="button"
-              onClick={copyEmail}
-              aria-label={emailCopied ? t.emailCopied : t.copyEmail}
-              title={emailCopied ? t.emailCopied : contactEmail}
-            >
-              <span>{emailCopied ? "COPIED" : "MAIL"}</span>
-              <CopyIcon />
-            </button>
             <a className="hero-contact-button" href="#contacto">{t.contact.toUpperCase()}</a>
           </div>
         </div>
@@ -496,10 +533,9 @@ export default function Home() {
         <div className="hero-ui">
           <div className="hero-intro">
             <div className="hero-name">
-              <h1>VORUN STUDIO</h1>
-              <div className="hero-caption-copy"><span>{t.heroSubtitle[0]}</span><span>{t.heroSubtitle[1]}</span></div>
+              <h1>Vorun Studio</h1>
+              <p>{t.heroText}</p>
             </div>
-            <p>{t.heroText}</p>
           </div>
         </div>
         <div className="hero-tech-marquee" aria-label={t.services}>
@@ -531,6 +567,31 @@ export default function Home() {
           <div className="section-index">{t.work.index}</div>
           <h2>{t.work.title[0]}<br /><em>{t.work.title[1]}</em></h2>
         </div>
+        <div className="work-gallery reveal" aria-label={t.work.gallery.label}>
+          <div className="work-gallery-label">{t.work.gallery.label}</div>
+          <div className="work-gallery-track">
+            {t.work.gallery.items.map(([number, name, type, src]) => (
+              <article className="work-gallery-item" key={number}>
+                <div className="work-gallery-media">
+                  <video
+                    className="work-gallery-video"
+                    src={src}
+                    aria-label={`${name} — ${type}`}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                </div>
+                <div className="work-gallery-caption">
+                  <span>{number}</span>
+                  <p><strong>{name}</strong><br />{type}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
         <div className="project-list">
           {projects.map((project, projectIndex) => (
             <article className={`project-case ${project.tone} reveal`} key={project.n}>
@@ -557,10 +618,6 @@ export default function Home() {
                   <div>
                     <span>{language === "es" ? "CREAMOS" : "WE CREATED"}</span>
                     <p>{t.work.cases[projectIndex].created}</p>
-                  </div>
-                  <div>
-                    <span>{language === "es" ? "DIFERENCIAL" : "DIFFERENTIAL"}</span>
-                    <p>{t.work.cases[projectIndex].differential}</p>
                   </div>
                 </div>
                 <a className="project-case-link" href={project.href} target="_blank" rel="noopener">
@@ -589,22 +646,33 @@ export default function Home() {
         <div className="section-heading reveal">
           <div className="section-index">{t.process.index}</div>
           <h2>{t.process.title[0]}<br /><em>{t.process.title[1]}</em></h2>
-          <p>{t.process.text}</p>
         </div>
-        <div className="profile-grid">
-          {t.process.steps.map(([title, text], index) => (
-            <article className="profile-card reveal" key={title}>
-              <div className="profile-number">({String(index + 1).padStart(2, "0")})</div>
-              <div className="profile-icons">
-                <span className="tech-icon"><b style={{ "--icon-color": "var(--accent)" }}>{String(index + 1).padStart(2, "0")}</b></span>
+        <div className="process-progress reveal" role="list" aria-label={t.process.index}>
+          {t.process.steps.map(([[title, accentTitle], text], index) => {
+            const status = index < processStep ? "is-complete" : index === processStep ? "is-active" : "is-pending";
+            return (
+            <article className={`process-step ${status}`} role="listitem" key={`${title}-${accentTitle}`}>
+              <div className="process-step-rail">
+                <button
+                  className="process-node"
+                  type="button"
+                  onClick={() => setProcessStep(index)}
+                  aria-label={`${String(index + 1).padStart(2, "0")} — ${title} ${accentTitle}`}
+                  aria-current={index === processStep ? "step" : undefined}
+                >
+                  <span>({String(index + 1).padStart(2, "0")})</span>
+                </button>
+                {index < t.process.steps.length - 1 ? (
+                  <span className="process-line" aria-hidden="true"><i /></span>
+                ) : null}
               </div>
-              <div className="profile-content">
-                <span>{t.process.index}</span>
-                <h3>{title}</h3>
+              <div className="process-step-copy">
+                <h3><span>{title}</span><em>{accentTitle}</em></h3>
                 <p>{text}</p>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -635,7 +703,6 @@ export default function Home() {
             <div className="section-index">{t.footer.index}</div>
             <h2>{t.footer.title[0]}<br /><em>{t.footer.title[1]}</em></h2>
             <p>
-              <span>{t.footer.kicker}</span><br /><br />
               <span>{t.footer.support}</span><br /><br />
               <a href="https://wa.me/5491133221897" target="_blank" rel="noopener">{t.footer.ctaLabel}</a>
             </p>
@@ -651,9 +718,8 @@ export default function Home() {
               loading="lazy"
             />
           </div>
-          <p><Multiline text={t.footer.location} /></p>
           <div className="socials">
-            <a href="https://www.tiktok.com/@vorun.studio" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.instagram.com/vorunstudio/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://wa.me/5491133221897" target="_blank" rel="noopener">WhatsApp</a>
             <a href={`mailto:${contactEmail}`}>Mail</a>
           </div>
