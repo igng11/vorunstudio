@@ -309,13 +309,16 @@ body[data-theme="light"] .lacuoca-hover-images { background: rgba(0,0,0,.025); }
 .osa-monitor-screen { position: absolute; z-index: 1; left: 12.1%; top: 5%; width: 75.8%; height: 86.6%; overflow: hidden; background: #fff; }
 .osa-monitor-site { width: 100%; height: auto; display: block; transform: translate3d(0, 0, 0); will-change: transform; user-select: none; pointer-events: none; }
 .osa-monitor-frame { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; display: block; object-fit: contain; user-select: none; pointer-events: none; }
-.work-gallery-track { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.5vw, 24px); }
-.work-gallery-item { min-width: 0; }
-.work-gallery-media { position: relative; aspect-ratio: 9 / 16; overflow: hidden; background: rgba(255,255,255,.025); }
-body[data-theme="light"] .work-gallery-media { background: rgba(0,0,0,.025); }
-.work-gallery-video { position: relative; z-index: 2; width: 100%; height: 100%; display: block; object-fit: cover; }
-.work-social-ui { position: absolute; z-index: 3; inset: 0; display: flex; align-items: flex-end; justify-content: space-between; padding: 20px 12px 18px 16px; color: #fff; pointer-events: none; text-shadow: 0 1px 8px rgba(0,0,0,.72); background: linear-gradient(to top, rgba(0,0,0,.5), transparent 34%); }
-.work-social-actions { order: 2; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.work-gallery-track { width: 100%; display: flex; align-items: flex-start; justify-content: center; gap: clamp(24px, 4vw, 72px); padding: clamp(10px, 1.5vw, 28px) clamp(8px, 2vw, 32px); }
+.work-gallery-item { flex: 0 1 auto; width: clamp(180px, 18vw, 292px); min-width: 0; }
+.work-gallery-item:nth-child(1) { margin-top: clamp(16px, 1.4vw, 26px); }
+.work-gallery-item:nth-child(3) { margin-top: clamp(22px, 2vw, 38px); }
+.work-gallery-media { position: relative; width: 100%; aspect-ratio: 324 / 650; }
+.work-gallery-screen { position: absolute; z-index: 1; left: 6.2%; top: 4.6%; width: 87%; height: 90.8%; overflow: hidden; border-radius: 8.5% / 4.1%; background: #000; }
+.work-gallery-video { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+.work-gallery-phone-frame { position: absolute; z-index: 4; inset: 0; width: 100%; height: 100%; display: block; object-fit: contain; pointer-events: none; user-select: none; }
+.work-social-ui { position: absolute; z-index: 2; inset: 0; display: flex; align-items: flex-end; justify-content: space-between; padding: clamp(14px, 1.2vw, 20px) clamp(9px, .8vw, 12px) clamp(14px, 1vw, 18px) clamp(11px, 1vw, 16px); color: #fff; pointer-events: none; text-shadow: 0 1px 8px rgba(0,0,0,.72); background: linear-gradient(to top, rgba(0,0,0,.5), transparent 34%); }
+.work-social-actions { order: 2; display: flex; flex-direction: column; align-items: center; gap: clamp(11px, 1vw, 16px); }
 .work-social-actions > span { display: grid; justify-items: center; gap: 3px; }
 .work-social-actions svg { width: 21px; height: 21px; filter: drop-shadow(0 1px 4px rgba(0,0,0,.65)); }
 .work-social-actions small { font-size: 8px; line-height: 1; letter-spacing: .02em; }
@@ -482,11 +485,18 @@ footer { width: 100%; min-height: max(820px, 100vh); margin-left: 0; display: fl
   .osa-image-outline { top: 2px; left: 2px; width: 56px; height: 56px; border-radius: 12px; }
   .osa-monitor-sticky { height: calc(100svh - 104px); }
   .osa-monitor-mockup { width: min(100%, calc((100svh - 104px - 164px) * 1.741935)); }
-  .portfolio-visual-content { display: block; overflow: hidden; }
-  .work-gallery-track { display: flex; gap: 12px; padding-right: 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-  .work-gallery-track::-webkit-scrollbar { display: none; }
-  .work-gallery-item { flex: 0 0 min(72vw, 280px); scroll-snap-align: start; }
+  .portfolio-visual-content { display: flex; overflow: visible; }
+  .work-gallery-track { gap: clamp(10px, 2vw, 18px); padding: 12px 0; }
+  .work-gallery-item { width: min(29%, 210px); }
+  .work-gallery-item:nth-child(1) { margin-top: 10px; }
+  .work-gallery-item:nth-child(3) { margin-top: 16px; }
   .portfolio-cta { margin-top: 18px; }
+}
+
+@media (max-width: 640px) {
+  .portfolio-item-content .portfolio-visual-content { aspect-ratio: auto; min-height: 0; }
+  .work-gallery-track { flex-direction: column; align-items: center; gap: 34px; padding: 8px 0 0; }
+  .work-gallery-item { flex: 0 0 auto; width: min(78vw, 300px); margin-top: 0 !important; }
 }
 
 @media (max-width: 360px) {

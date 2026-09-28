@@ -28,12 +28,6 @@ const portfolioProjects = [
   {
     key: "content",
     n: "04"
-  },
-  {
-    key: "mads",
-    n: "05",
-    href: "https://app-mads.vercel.app/",
-    art: { src: "/appMads-proyect.png", width: 1076, height: 650 }
   }
 ];
 
@@ -77,11 +71,10 @@ const translations = {
         ]
       },
       items: [
-        { name: "CARBÓNICA", meta: "IDENTIDAD / BRANDING", headline: "Una identidad visual construida desde cero." },
-        { name: "LA CUOCA", meta: "PRODUCTO DIGITAL / CONTENIDO", headline: "Una experiencia digital para mostrar, vender y gestionar.", cta: "VER LA CUOCA" },
-        { name: "OSA", meta: "WEB / REVOPS / CRM", headline: "Una presencia digital clara para un servicio complejo.", cta: "CONOCER OSA" },
-        { name: "CONTENIDO", meta: "VIDEO / CONTENIDO DIGITAL", headline: "Creamos piezas para que negocios locales destaquen en redes." },
-        { name: "MADS", meta: "IDENTIDAD / WEB / APP", headline: "Llevamos una misma identidad a web, mobile y producto digital.", cta: "VER PROYECTO MADS" }
+        { name: "CARBÓNICA", meta: "IDENTIDAD / BRANDING", headline: "Identidad visual construida desde cero." },
+        { name: "LA CUOCA", meta: "PRODUCTO DIGITAL / CONTENIDO", headline: "Experiencia digital para mostrar, vender y gestionar.", cta: "VER LA CUOCA" },
+        { name: "OSA", meta: "WEB / REVOPS / CRM", headline: "Presencia digital clara para un servicio complejo.", cta: "CONOCER OSA" },
+        { name: "CONTENIDO", meta: "VIDEO / CONTENIDO DIGITAL", headline: "Piezas para que negocios locales destaquen en redes." }
       ]
     },
     services: {
@@ -164,11 +157,10 @@ const translations = {
         ]
       },
       items: [
-        { name: "CARBÓNICA", meta: "IDENTITY / BRANDING", headline: "A visual identity built from scratch." },
-        { name: "LA CUOCA", meta: "DIGITAL PRODUCT / CONTENT", headline: "A digital experience to showcase, sell, and manage.", cta: "VIEW LA CUOCA" },
-        { name: "OSA", meta: "WEB / REVOPS / CRM", headline: "A clear digital presence for a complex service.", cta: "DISCOVER OSA" },
-        { name: "CONTENT", meta: "VIDEO / DIGITAL CONTENT", headline: "We create pieces that help local businesses stand out on social media." },
-        { name: "MADS", meta: "IDENTITY / WEB / APP", headline: "We carried one identity across web, mobile, and digital product.", cta: "VIEW MADS PROJECT" }
+        { name: "CARBÓNICA", meta: "IDENTITY / BRANDING", headline: "Visual identity built from scratch." },
+        { name: "LA CUOCA", meta: "DIGITAL PRODUCT / CONTENT", headline: "Digital experience to showcase, sell, and manage.", cta: "VIEW LA CUOCA" },
+        { name: "OSA", meta: "WEB / REVOPS / CRM", headline: "Clear digital presence for a complex service.", cta: "DISCOVER OSA" },
+        { name: "CONTENT", meta: "VIDEO / DIGITAL CONTENT", headline: "Pieces that help local businesses stand out on social media." }
       ]
     },
     services: {
@@ -550,29 +542,32 @@ export default function Home() {
                   {t.work.gallery.items.map(([number, name, type, src, socialCaption, likes, comments]) => (
                     <div className="work-gallery-item" key={number}>
                       <div className="work-gallery-media">
-                        <video
-                          className="work-gallery-video"
-                          src={src}
-                          aria-label={`${name} — ${type}`}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          preload="metadata"
-                        />
-                        <div className="work-social-ui" aria-hidden="true">
-                          <div className="work-social-actions">
-                            <span><SocialIcon name="heart" /><small>{likes}</small></span>
-                            <span><SocialIcon name="comment" /><small>{comments}</small></span>
-                            <span><SocialIcon name="share" /></span>
-                            <span><SocialIcon name="save" /></span>
-                          </div>
-                          <div className="work-social-meta">
-                            <strong>@vorunstudio</strong>
-                            <p><b>{name}</b> · {socialCaption}</p>
-                            <span><SocialIcon name="audio" /> {language === "es" ? "audio original" : "original audio"}</span>
+                        <div className="work-gallery-screen">
+                          <video
+                            className="work-gallery-video"
+                            src={src}
+                            aria-label={`${name} — ${type}`}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                          />
+                          <div className="work-social-ui" aria-hidden="true">
+                            <div className="work-social-actions">
+                              <span><SocialIcon name="heart" /><small>{likes}</small></span>
+                              <span><SocialIcon name="comment" /><small>{comments}</small></span>
+                              <span><SocialIcon name="share" /></span>
+                              <span><SocialIcon name="save" /></span>
+                            </div>
+                            <div className="work-social-meta">
+                              <strong>@vorunstudio</strong>
+                              <p><b>{name}</b> · {socialCaption}</p>
+                              <span><SocialIcon name="audio" /> {language === "es" ? "audio original" : "original audio"}</span>
+                            </div>
                           </div>
                         </div>
+                        <img className="work-gallery-phone-frame" src="/phone.png" alt="" width="324" height="650" aria-hidden="true" />
                       </div>
                     </div>
                   ))}
