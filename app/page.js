@@ -1,39 +1,43 @@
 "use client";
 
 import { Fragment, useEffect, useRef, useState } from "react";
+import CarbonicaShuffle from "./CarbonicaShuffle";
+import OsaMonitorScroll from "./OsaMonitorScroll";
 import HeroGradientMark from "./HeroGradientMark";
+import StepTimelinePro from "./StepTimelinePro";
+import LaCuocaHoverSlider from "./LaCuocaHoverSlider";
 
-const projects = [
+const portfolioProjects = [
   {
+    key: "carbonica",
     n: "01",
-    type: "Osa",
-    title: "Plataforma de\nmarketing automation",
-    tone: "cyan",
-    href: "https://www.osarevops.com",
-    aspect: "1080 / 653",
-    art: { src: "/osa-proyect.png", webp: "/osa-proyect.png", width: 1080, height: 653 }
+    art: { src: "/carbonica.png", width: 3981, height: 2480 }
   },
   {
+    key: "lacuoca",
     n: "02",
-    type: "Mads",
-    title: "Sistema web,\nmarca y app",
-    tone: "red",
-    href: "https://app-mads.vercel.app/",
-    aspect: "1076 / 650",
-    art: { src: "/appMads-proyect.png", webp: "/appMads-proyect.png", width: 1076, height: 650 }
+    href: "https://www.tiktok.com/@vorun.studio/video/7649178100726566151",
+    art: { src: "/lacuoca-proyecto.png", width: 1080, height: 620 }
   },
   {
+    key: "osa",
     n: "03",
-    type: "La Cuoca",
-    title: "Gestión de pedidos\ny publicaciones gastronómicas",
-    tone: "sand",
-    href: "https://www.tiktok.com/@vorun.studio/video/7649178100726566151",
-    aspect: "1080 / 620",
-    art: { src: "/lacuoca-proyecto.png", webp: "/lacuoca-proyecto.png", width: 1080, height: 620 }
+    href: "https://www.osarevops.com",
+    art: { src: "/osa-proyect.png", width: 1080, height: 653 }
+  },
+  {
+    key: "content",
+    n: "04"
+  },
+  {
+    key: "mads",
+    n: "05",
+    href: "https://app-mads.vercel.app/",
+    art: { src: "/appMads-proyect.png", width: 1076, height: 650 }
   }
 ];
 
-const contactEmail = "igng_11@hotmail.com";
+const contactEmail = "vorustudio@gmail.com";
 
 const translations = {
   es: {
@@ -65,37 +69,19 @@ const translations = {
       index: "01 / NUESTRO TRABAJO",
       title: ["Mirá lo que", "hacemos."],
       gallery: {
-        label: "SELECCIÓN / 2026",
+        label: "04 / CONTENIDO AUDIOVISUAL / 2026",
         items: [
-          ["01", "PIZZERÍA", "CAMPAÑA", "/pizzeria.mp4"],
-          ["02", "CAFETERÍA", "CONTENIDO", "/cafeteria.mp4"],
-          ["03", "TRIVUM", "CULTURA", "/cultura.mp4"]
+          ["04.1", "PIZZERÍA", "CAMPAÑA", "/pizzeria.mp4", "Una campaña para abrir el apetito.", "128", "12"],
+          ["04.2", "CAFETERÍA", "CONTENIDO", "/cafeteria.mp4", "El ritual de cada pausa.", "96", "8"],
+          ["04.3", "TRIVUM", "CULTURA", "/cultura.mp4", "Cultura que se vive en equipo.", "74", "6"]
         ]
       },
-      projects: [
-        "Plataforma de\nmarketing automation",
-        "Sistema web,\nmarca y app",
-        "Gestión de pedidos\ny publicaciones gastronómicas"
-      ],
-      cases: [
-        {
-          headline: "De la complejidad, a la claridad.",
-          summary: "",
-          created: "Estrategia digital · Diseño web · Desarrollo",
-          cta: "CONOCER OSA"
-        },
-        {
-          headline: "Todo conectado. Una sola marca.",
-          summary: "",
-          created: "Identidad visual · Sistema web · Aplicación",
-          cta: "VER PROYECTO MADS"
-        },
-        {
-          headline: "Funcionar mejor. Verse mejor.",
-          summary: "",
-          created: "Contenido audiovisual · Producto digital · Comunicación",
-          cta: "VER LA CUOCA"
-        }
+      items: [
+        { name: "CARBÓNICA", meta: "IDENTIDAD / BRANDING", headline: "Una identidad visual construida desde cero." },
+        { name: "LA CUOCA", meta: "PRODUCTO DIGITAL / CONTENIDO", headline: "Una experiencia digital para mostrar, vender y gestionar.", cta: "VER LA CUOCA" },
+        { name: "OSA", meta: "WEB / REVOPS / CRM", headline: "Una presencia digital clara para un servicio complejo.", cta: "CONOCER OSA" },
+        { name: "CONTENIDO", meta: "VIDEO / CONTENIDO DIGITAL", headline: "Creamos piezas para que negocios locales destaquen en redes." },
+        { name: "MADS", meta: "IDENTIDAD / WEB / APP", headline: "Llevamos una misma identidad a web, mobile y producto digital.", cta: "VER PROYECTO MADS" }
       ]
     },
     services: {
@@ -170,37 +156,19 @@ const translations = {
       index: "01 / OUR WORK",
       title: ["See what we", "do."],
       gallery: {
-        label: "SELECTION / 2026",
+        label: "04 / AUDIOVISUAL CONTENT / 2026",
         items: [
-          ["01", "PIZZERÍA", "CAMPAIGN", "/pizzeria.mp4"],
-          ["02", "CAFETERÍA", "CONTENT", "/cafeteria.mp4"],
-          ["03", "TRIVUM", "CULTURE", "/cultura.mp4"]
+          ["04.1", "PIZZERÍA", "CAMPAIGN", "/pizzeria.mp4", "A campaign made to spark appetite.", "128", "12"],
+          ["04.2", "CAFETERÍA", "CONTENT", "/cafeteria.mp4", "The ritual behind every pause.", "96", "8"],
+          ["04.3", "TRIVUM", "CULTURE", "/cultura.mp4", "A culture lived as a team.", "74", "6"]
         ]
       },
-      projects: [
-        "Marketing automation\nplatform",
-        "Web platform,\nbrand and app",
-        "Order management\nand food publishing"
-      ],
-      cases: [
-        {
-          headline: "From complexity to clarity.",
-          summary: "",
-          created: "Digital strategy · Web design · Development",
-          cta: "DISCOVER OSA"
-        },
-        {
-          headline: "Everything connected. One brand.",
-          summary: "",
-          created: "Visual identity · Web system · Application",
-          cta: "VIEW MADS PROJECT"
-        },
-        {
-          headline: "Work better. Look better.",
-          summary: "",
-          created: "Audiovisual content · Digital product · Communication",
-          cta: "VIEW LA CUOCA"
-        }
+      items: [
+        { name: "CARBÓNICA", meta: "IDENTITY / BRANDING", headline: "A visual identity built from scratch." },
+        { name: "LA CUOCA", meta: "DIGITAL PRODUCT / CONTENT", headline: "A digital experience to showcase, sell, and manage.", cta: "VIEW LA CUOCA" },
+        { name: "OSA", meta: "WEB / REVOPS / CRM", headline: "A clear digital presence for a complex service.", cta: "DISCOVER OSA" },
+        { name: "CONTENT", meta: "VIDEO / DIGITAL CONTENT", headline: "We create pieces that help local businesses stand out on social media." },
+        { name: "MADS", meta: "IDENTITY / WEB / APP", headline: "We carried one identity across web, mobile, and digital product.", cta: "VIEW MADS PROJECT" }
       ]
     },
     services: {
@@ -255,6 +223,15 @@ function Multiline({ text }) {
       {line}{index < lines.length - 1 ? <br /> : null}
     </Fragment>
   ));
+}
+
+function SocialIcon({ name }) {
+  const common = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.7", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true" };
+  if (name === "heart") return <svg {...common}><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" /></svg>;
+  if (name === "comment") return <svg {...common}><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z" /></svg>;
+  if (name === "share") return <svg {...common}><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>;
+  if (name === "save") return <svg {...common}><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" /></svg>;
+  return <svg {...common}><path d="M9 18V5l11-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="17" cy="16" r="3" /></svg>;
 }
 
 function SidebarIcon({ name }) {
@@ -312,7 +289,6 @@ export default function Home() {
   const [theme, setTheme] = useState("dark");
   const [language, setLanguage] = useState("es");
   const [headerVisible, setHeaderVisible] = useState(true);
-  const [processStep, setProcessStep] = useState(0);
   const headerHideTimer = useRef(null);
   const t = translations[language];
 
@@ -374,14 +350,6 @@ export default function Home() {
     document.documentElement.lang = language;
     window.localStorage.setItem("language", language);
   }, [language]);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
-    const timer = window.setInterval(() => {
-      setProcessStep((step) => (step + 1) % translations.es.process.steps.length);
-    }, 2800);
-    return () => window.clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -567,65 +535,73 @@ export default function Home() {
           <div className="section-index">{t.work.index}</div>
           <h2>{t.work.title[0]}<br /><em>{t.work.title[1]}</em></h2>
         </div>
-        <div className="work-gallery reveal" aria-label={t.work.gallery.label}>
-          <div className="work-gallery-label">{t.work.gallery.label}</div>
-          <div className="work-gallery-track">
-            {t.work.gallery.items.map(([number, name, type, src]) => (
-              <article className="work-gallery-item" key={number}>
-                <div className="work-gallery-media">
-                  <video
-                    className="work-gallery-video"
-                    src={src}
-                    aria-label={`${name} — ${type}`}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                  />
-                </div>
-                <div className="work-gallery-caption">
-                  <span>{number}</span>
-                  <p><strong>{name}</strong><br />{type}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
         <div className="project-list">
-          {projects.map((project, projectIndex) => (
-            <article className={`project-case ${project.tone} reveal`} key={project.n}>
-              <div className="project-case-header">
-                <span className="project-n">({project.n})</span>
-                <span className="project-type">{project.type}</span>
-                <span className="project-case-service"><Multiline text={t.work.projects[projectIndex]} /></span>
-              </div>
-              <a className="project-case-media" href={project.href} target="_blank" rel="noopener" aria-label={`${t.work.cases[projectIndex].cta}: ${project.type}`}>
-                <img
-                  src={project.art.src}
-                  alt={`${project.type} — ${t.work.projects[projectIndex].replace("\n", " ")}`}
-                  width={project.art.width}
-                  height={project.art.height}
-                  loading={projectIndex === 0 ? "eager" : "lazy"}
-                  fetchPriority={projectIndex === 0 ? "low" : "auto"}
-                  decoding="async"
-                />
-              </a>
-              <div className="project-case-copy">
-                <h3>{t.work.cases[projectIndex].headline}</h3>
-                {t.work.cases[projectIndex].summary ? <p className="project-case-summary">{t.work.cases[projectIndex].summary}</p> : null}
-                <div className="project-case-details">
-                  <div>
-                    <span>{language === "es" ? "CREAMOS" : "WE CREATED"}</span>
-                    <p>{t.work.cases[projectIndex].created}</p>
-                  </div>
+          {portfolioProjects.map((project, projectIndex) => {
+            const item = t.work.items[projectIndex];
+            const visual = project.key === "carbonica" ? (
+              <CarbonicaShuffle />
+            ) : project.key === "lacuoca" ? (
+              <LaCuocaHoverSlider />
+            ) : project.key === "osa" ? (
+              <OsaMonitorScroll number={project.n} name={item.name} meta={item.meta} headline={item.headline} />
+            ) : project.key === "content" ? (
+              <div className="portfolio-visual portfolio-visual-content" aria-label={t.work.gallery.label}>
+                <div className="work-gallery-track">
+                  {t.work.gallery.items.map(([number, name, type, src, socialCaption, likes, comments]) => (
+                    <div className="work-gallery-item" key={number}>
+                      <div className="work-gallery-media">
+                        <video
+                          className="work-gallery-video"
+                          src={src}
+                          aria-label={`${name} — ${type}`}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                        />
+                        <div className="work-social-ui" aria-hidden="true">
+                          <div className="work-social-actions">
+                            <span><SocialIcon name="heart" /><small>{likes}</small></span>
+                            <span><SocialIcon name="comment" /><small>{comments}</small></span>
+                            <span><SocialIcon name="share" /></span>
+                            <span><SocialIcon name="save" /></span>
+                          </div>
+                          <div className="work-social-meta">
+                            <strong>@vorunstudio</strong>
+                            <p><b>{name}</b> · {socialCaption}</p>
+                            <span><SocialIcon name="audio" /> {language === "es" ? "audio original" : "original audio"}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <a className="project-case-link" href={project.href} target="_blank" rel="noopener">
-                  {t.work.cases[projectIndex].cta}<span aria-hidden="true">↗</span>
-                </a>
               </div>
-            </article>
-          ))}
+            ) : project.href ? (
+              <a className="portfolio-visual" href={project.href} target="_blank" rel="noopener" aria-label={`${item.cta}: ${item.name}`}>
+                <img src={project.art.src} alt={`${item.name} — ${item.meta}`} width={project.art.width} height={project.art.height} loading="lazy" decoding="async" />
+              </a>
+            ) : (
+              <figure className="portfolio-visual">
+                <img src={project.art.src} alt={`${item.name} — ${item.meta}`} width={project.art.width} height={project.art.height} loading="eager" fetchPriority="low" decoding="async" />
+              </figure>
+            );
+
+            return (
+              <article className={`portfolio-item portfolio-item-${project.key} reveal`} id={project.key === "carbonica" || project.key === "osa" ? project.key : undefined} key={project.key}>
+                {project.key !== "osa" ? <>
+                  <header className="portfolio-header">
+                    <div><span>({project.n})</span><h3>{item.name}</h3></div>
+                    <p>{item.meta}</p>
+                  </header>
+                  <h4>{item.headline}</h4>
+                </> : null}
+                {visual}
+                {project.href ? <a className="portfolio-cta" href={project.href} target="_blank" rel="noopener">{item.cta}<span aria-hidden="true">↗</span></a> : null}
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -642,38 +618,12 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="experience section-pad" id="proceso">
-        <div className="section-heading reveal">
-          <div className="section-index">{t.process.index}</div>
-          <h2>{t.process.title[0]}<br /><em>{t.process.title[1]}</em></h2>
-        </div>
-        <div className="process-progress reveal" role="list" aria-label={t.process.index}>
-          {t.process.steps.map(([[title, accentTitle], text], index) => {
-            const status = index < processStep ? "is-complete" : index === processStep ? "is-active" : "is-pending";
-            return (
-            <article className={`process-step ${status}`} role="listitem" key={`${title}-${accentTitle}`}>
-              <div className="process-step-rail">
-                <button
-                  className="process-node"
-                  type="button"
-                  onClick={() => setProcessStep(index)}
-                  aria-label={`${String(index + 1).padStart(2, "0")} — ${title} ${accentTitle}`}
-                  aria-current={index === processStep ? "step" : undefined}
-                >
-                  <span>({String(index + 1).padStart(2, "0")})</span>
-                </button>
-                {index < t.process.steps.length - 1 ? (
-                  <span className="process-line" aria-hidden="true"><i /></span>
-                ) : null}
-              </div>
-              <div className="process-step-copy">
-                <h3><span>{title}</span><em>{accentTitle}</em></h3>
-                <p>{text}</p>
-              </div>
-            </article>
-            );
-          })}
-        </div>
+      <section className="experience process-section section-pad" id="proceso">
+        <StepTimelinePro
+          eyebrow={t.process.index.split(" / ").at(-1)}
+          heading={t.process.title}
+          steps={t.process.steps}
+        />
       </section>
 
       <section className="statement section-pad" id="editorial">
