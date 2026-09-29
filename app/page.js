@@ -35,7 +35,7 @@ const contactEmail = "vorustudio@gmail.com";
 
 const translations = {
   es: {
-    nav: ["Nuestro trabajo", "Qué hacemos", "Proceso", "Preguntas frecuentes"],
+    nav: ["Nuestro Trabajo", "Qué Hacemos", "Proceso", "Preguntas Frecuentes"],
     contact: "Contacto",
     menuOpen: "Abrir menú",
     menuClose: "Cerrar menú",
@@ -79,7 +79,7 @@ const translations = {
     },
     services: {
       index: "02 / QUÉ HACEMOS",
-      title: ["Una marca.", "Distintas herramientas."],
+      title: ["Identidad, contenido", "y desarrollo web."],
       groups: [
         ["IDENTIDAD", ["Branding", "Dirección visual", "Piezas gráficas"]],
         ["CONTENIDO", ["Video", "Campañas", "Redes"]],
@@ -94,9 +94,6 @@ const translations = {
         [["Creamos", "la propuesta"], "Definimos qué hacer y cómo llevarlo adelante."],
         [["Recibís", "el resultado"], "Te entregamos todo terminado y listo para usar."]
       ]
-    },
-    editorial: {
-      title: ["El negocio permanece delante.", "La tecnología, detrás."]
     },
     faq: {
       index: "04 / PREGUNTAS FRECUENTES",
@@ -121,7 +118,7 @@ const translations = {
     backToTop: "Volver arriba"
   },
   en: {
-    nav: ["Our work", "What we do", "Process", "FAQ"],
+    nav: ["Our Work", "What We Do", "Process", "FAQ"],
     contact: "Contact",
     menuOpen: "Open menu",
     menuClose: "Close menu",
@@ -165,7 +162,7 @@ const translations = {
     },
     services: {
       index: "02 / WHAT WE DO",
-      title: ["One brand.", "Different tools."],
+      title: ["Branding, content", "and web development."],
       groups: [
         ["IDENTITY", ["Branding", "Visual direction", "Graphic pieces"]],
         ["CONTENT", ["Video", "Campaigns", "Social media"]],
@@ -180,9 +177,6 @@ const translations = {
         [["We create", "the proposal"], "We define what to do and how to move it forward."],
         [["You receive", "the result"], "We deliver everything finished and ready to use."]
       ]
-    },
-    editorial: {
-      title: ["The business stays in front.", "Technology stays behind."]
     },
     faq: {
       index: "04 / FREQUENTLY ASKED QUESTIONS",
@@ -618,14 +612,8 @@ export default function Home() {
           eyebrow={t.process.index.split(" / ").at(-1)}
           heading={t.process.title}
           steps={t.process.steps}
+          theme={theme}
         />
-      </section>
-
-      <section className="statement section-pad" id="editorial">
-        <div className="section-heading footer-heading reveal">
-          <div className="section-index" aria-hidden="true" />
-          <h2>{t.editorial.title[0]}<br /><em>{t.editorial.title[1]}</em></h2>
-        </div>
       </section>
 
       <section className="statement section-pad" id="faq">

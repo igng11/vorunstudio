@@ -3,16 +3,26 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const COLORS = {
-  background: "#000000",
-  accent: "#48C9AE",
-  activeTitle: "#FFFFFF",
-  activeText: "rgba(255,255,255,.78)",
-  muted: "rgba(255,255,255,.32)",
-  line: "rgba(255,255,255,.2)",
+const THEMES = {
+  dark: {
+    background: "#000000",
+    accent: "#48C9AE",
+    activeTitle: "#FFFFFF",
+    activeText: "rgba(255,255,255,.78)",
+    muted: "rgba(255,255,255,.32)",
+    line: "rgba(255,255,255,.2)",
+  },
+  light: {
+    background: "#FFFFFF",
+    accent: "#48C9AE",
+    activeTitle: "#000000",
+    activeText: "rgba(0,0,0,.78)",
+    muted: "rgba(0,0,0,.32)",
+    line: "rgba(0,0,0,.2)",
+  },
 };
 
-function StepRow({ index, step, activeViewportOffset }) {
+function StepRow({ index, step, activeViewportOffset, colors }) {
   const rowRef = useRef(null);
   const activeOffsetPct = activeViewportOffset * 100;
   const { scrollYProgress } = useScroll({
@@ -20,11 +30,11 @@ function StepRow({ index, step, activeViewportOffset }) {
     offset: [`start ${activeOffsetPct + 0.1}%`, `start ${activeOffsetPct}%`],
   });
 
-  const circleBackground = useTransform(scrollYProgress, [0, 1], [COLORS.background, COLORS.accent]);
-  const circleBorder = useTransform(scrollYProgress, [0, 1], [COLORS.line, COLORS.accent]);
-  const numberColor = useTransform(scrollYProgress, [0, 1], [COLORS.muted, COLORS.activeTitle]);
-  const titleColor = useTransform(scrollYProgress, [0, 1], [COLORS.muted, COLORS.activeTitle]);
-  const descriptionColor = useTransform(scrollYProgress, [0, 1], [COLORS.muted, COLORS.activeText]);
+  const circleBackground = useTransform(scrollYProgress, [0, 1], [colors.background, colors.accent]);
+  const circleBorder = useTransform(scrollYProgress, [0, 1], [colors.line, colors.accent]);
+  const numberColor = useTransform(scrollYProgress, [0, 1], [colors.muted, colors.activeTitle]);
+  const titleColor = useTransform(scrollYProgress, [0, 1], [colors.muted, colors.activeTitle]);
+  const descriptionColor = useTransform(scrollYProgress, [0, 1], [colors.muted, colors.activeText]);
   const haloShadow = useTransform(
     scrollYProgress,
     (value) => `0 0 0 ${10 * value}px rgba(72,201,174,${0.15 * value})`,
@@ -55,8 +65,9 @@ function StepRow({ index, step, activeViewportOffset }) {
   );
 }
 
-export default function StepTimelinePro({ eyebrow, heading, steps, activeViewportOffset = 0.5 }) {
+export default function StepTimelinePro({ eyebrow, heading, steps, theme = "dark", activeViewportOffset = 0.5 }) {
   const timelineTrackRef = useRef(null);
+  const colors = THEMES[theme] ?? THEMES.dark;
   const stepCount = Math.max(steps.length, 1);
   const activeOffsetPct = activeViewportOffset * 100;
   const { scrollYProgress: rawLineProgress } = useScroll({
@@ -83,6 +94,7 @@ export default function StepTimelinePro({ eyebrow, heading, steps, activeViewpor
               index={index}
               step={step}
               activeViewportOffset={activeViewportOffset}
+              colors={colors}
             />
           </div>
         ))}
