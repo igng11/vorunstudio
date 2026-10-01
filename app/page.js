@@ -16,7 +16,7 @@ const portfolioProjects = [
   {
     key: "lacuoca",
     n: "02",
-    href: "https://www.tiktok.com/@vorun.studio/video/7649178100726566151",
+    href: "https://lacuocacomidas.com",
     art: { src: "/lacuoca-proyecto.png", width: 1080, height: 620 }
   },
   {
@@ -468,6 +468,30 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
+        <div className={menuOpen ? "mobile-hero-controls is-menu-open" : "mobile-hero-controls"}>
+          <button
+            className="theme-toggle"
+            type="button"
+            onClick={() => void changeTheme(theme === "dark" ? "light" : "dark")}
+            aria-label={theme === "dark" ? t.lightMode : t.darkMode}
+            aria-pressed={theme === "light"}
+          >
+            {theme === "dark" ? "LIGHT" : "DARK"}
+          </button>
+          <button
+            className="language-toggle"
+            type="button"
+            onClick={() => setLanguage((current) => current === "es" ? "en" : "es")}
+            aria-label={t.language}
+          >
+            <span className={language === "es" ? "active" : ""}>ES</span>
+            <i aria-hidden="true">/</i>
+            <span className={language === "en" ? "active" : ""}>EN</span>
+          </button>
+          <div className="hero-caption">
+            <a className="hero-contact-button" href="#contacto">{t.contact.toUpperCase()}</a>
+          </div>
+        </div>
         <div className="portrait-wrap">
           <HeroGradientMark label={t.portraitAlt} />
         </div>
